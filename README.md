@@ -7,3 +7,4 @@ The goal is to implement a simple inventory tracking application with different 
 
 &nbsp;
 ## **Variants**
+- [React](./react)  
