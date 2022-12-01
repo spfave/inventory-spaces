@@ -15,13 +15,15 @@ export default function ErrorPage() {
   }
 
   return (
-    <div className="mx-auto flex h-screen flex-col justify-center gap-2 text-center">
+    <div className="flex h-screen flex-col justify-center gap-2 text-center">
       <h2 className="text-4xl font-bold">Oh No!</h2>
       <p>An unexpected error has occurred</p>
       <p>
         <i>{error?.statusText || error?.message || 'mystery error'}</i>
       </p>
-      <button onClick={navHome}>Return Home</button>
+      <button className="btn-link btn mx-auto mt-4 w-40" onClick={navHome}>
+        Return Home
+      </button>
     </div>
   );
 }
