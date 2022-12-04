@@ -1,22 +1,32 @@
+import {Outlet} from 'react-router-dom';
+
 export default function Root(): JSX.Element {
   return (
     <>
       <Main />
+      <hr />
       <Footer />
     </>
   );
 }
 
 function Main(): JSX.Element {
-  return <main>main</main>;
+  return (
+    <main className="flex-grow">
+      <div>column</div>
+      <div>column</div>
+      {/* <SideBar/> */}
+      <Outlet />
+    </main>
+  );
 }
 
 function Footer(): JSX.Element {
   return (
-    <footer className="flex items-center justify-center gap-6">
-      <p>Built by Sebastian</p>
+    <footer className="flex items-center justify-center gap-5 py-2">
+      <p className="text-center">Built by Sebastian</p>
       <span>&#9679;</span>
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-3">
         <a href="https://github.com/spfave" target="_blank" rel="noreferrer">
           <img
             src="./assets/icons/github.svg"
@@ -33,14 +43,13 @@ function Footer(): JSX.Element {
           <img
             src="./assets/icons/linkedin.svg"
             alt="linkedin svg"
-            className="fill-white"
             height={30}
             width={30}
           />
         </a>
       </div>
       <span>&#9679;</span>
-      <p>Built with React</p>
+      <p className="text-center">Built with React</p>
     </footer>
   );
 }

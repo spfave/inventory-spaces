@@ -1,6 +1,6 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
-import Root from '~/views/root';
+import Root from '~/views/root/root';
 import ErrorPage from '~/views/error-page';
 
 const router = createBrowserRouter([
