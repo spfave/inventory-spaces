@@ -4,6 +4,7 @@ import Root from '~/views/root/root';
 import ErrorPage from '~/views/error-page';
 import Space from '~/views/space';
 import About from '~/views/about';
+import RootIndex from '~/views/root/root-index';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {index: true, element: <RootIndex />},
       {
         path: '/space',
         element: <Space />,
