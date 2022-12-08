@@ -51,7 +51,7 @@ function SpacesNav(): JSX.Element {
       {tempSpaces.length ? (
         tempSpaces.map((space) => (
           <li key={space.id}>
-            <NavLink to={`/${space.name}`}>{space.name}</NavLink>
+            <NavLink to={`/space/${space.name}`}>{space.name}</NavLink>
           </li>
         ))
       ) : (

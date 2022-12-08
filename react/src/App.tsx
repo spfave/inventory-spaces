@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <RootIndex />},
       {
-        path: '/:space',
+        path: '/space/:space',
         element: <Space />,
       },
       {
