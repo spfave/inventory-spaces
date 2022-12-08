@@ -1,3 +1,7 @@
+import {useParams} from 'react-router-dom';
+
 export default function Space(): JSX.Element {
-  return <div className="flex-grow">Space</div>;
+  const {space} = useParams();
+
+  return <div className="flex-grow">{space}</div>;
 }
