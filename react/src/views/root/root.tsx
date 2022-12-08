@@ -1,5 +1,7 @@
 import {Outlet} from 'react-router-dom';
 
+import SideBar from './sidebar';
+
 export default function Root(): JSX.Element {
   return (
     <>
@@ -12,10 +14,8 @@ export default function Root(): JSX.Element {
 
 function Main(): JSX.Element {
   return (
-    <main className="flex-grow">
-      <div>column</div>
-      <div>column</div>
-      {/* <SideBar/> */}
+    <main className="flex flex-grow">
+      <SideBar />
       <Outlet />
     </main>
   );
