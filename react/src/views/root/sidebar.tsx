@@ -15,7 +15,7 @@ const tempSpaces: Space[] = [
 export default function SideBar(): JSX.Element {
   return (
     <div className="flex w-80 flex-col">
-      <header className="flex h-16 items-center gap-3 px-3">
+      <header className="flex h-16 place-items-end gap-3 px-3 pb-3">
         <img
           src="./assets/icons/reshot-logistics-warehouse.svg"
           alt="logo icon"
@@ -37,7 +37,7 @@ function Navigation(): JSX.Element {
   return (
     <nav>
       <ul>
-        <li>Spaces</li>
+        <NavLink to="/">Spaces</NavLink>
         <SpacesNav />
         <NavLink to="/about">About</NavLink>
       </ul>
