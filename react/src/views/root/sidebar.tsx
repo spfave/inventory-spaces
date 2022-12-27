@@ -24,49 +24,64 @@ export default function SideBar(): JSX.Element {
         />
         <h1 className="text-3xl font-bold">Inventory.spaces</h1>
       </header>
-      <hr />
       <Navigation />
     </div>
   );
 }
 
-// Major section nav: space, about
-// sub section nav: spaces
-
 type StyleNavArgs = {isActive: boolean};
+function styleNavLink({isActive}: StyleNavArgs): string | undefined {
+  return isActive ? 'text-blue-50' : undefined;
+}
 
 function Navigation(): JSX.Element {
-  function styleNavLink({isActive}: StyleNavArgs): string | undefined {
-    return isActive ? 'text-blue-50' : undefined;
-  }
-
   return (
-    <nav>
-      <ul>
-        <NavLink to="/" className={styleNavLink}>
-          Spaces
-        </NavLink>
+    <nav className="m-3">
+      <ul className="flex flex-col gap-3 [&>li]:flex [&>li]:h-8 [&>li]:items-center [&>li]:gap-3">
+        <li className="">
+          <span className="flex w-[40px] justify-center">
+            <img
+              src="./assets/icons/reshot-logistics-box.svg"
+              alt="spaces icon"
+              height={32}
+              width={32}
+            />
+          </span>
+          <NavLink to="/" className={styleNavLink}>
+            Spaces
+          </NavLink>
+        </li>
         <SpacesNav styleNavLink={styleNavLink} />
-        <NavLink to="/about" className={styleNavLink}>
-          About
-        </NavLink>
+        <li>
+          <span className="flex w-[40px] justify-center">
+            <img
+              src="./assets/icons/reshot-logistics-scan.svg"
+              alt="about icon"
+              height={32}
+              width={32}
+            />
+          </span>
+          <NavLink to="/about" className={styleNavLink}>
+            About
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
 }
 
-type SpaceNavProps = {
-  styleNavLink?: ({isActive}: StyleNavArgs) => string | undefined;
+type SpacesNavProps = {
+  styleNavLink?: (args: StyleNavArgs) => string | undefined;
 };
 
-function SpacesNav(props: SpaceNavProps): JSX.Element {
+function SpacesNav(props: SpacesNavProps): JSX.Element {
   const {styleNavLink} = props;
 
   return (
-    <ul>
+    <>
       {tempSpaces.length ? (
         tempSpaces.map((space) => (
-          <li key={space.id}>
+          <li key={space.id} className="ml-[52px]">
             <NavLink to={`/space/${space.name}`} className={styleNavLink}>
               {space.name}
             </NavLink>
@@ -75,6 +90,6 @@ function SpacesNav(props: SpaceNavProps): JSX.Element {
       ) : (
         <li>No existing spaces</li>
       )}
-    </ul>
+    </>
   );
 }
