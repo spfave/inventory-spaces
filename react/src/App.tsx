@@ -1,10 +1,10 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Root from '~/views/root/root';
-import ErrorPage from '~/views/error-page';
+import RootIndex from '~/views/root/root-index';
 import Space from '~/views/space';
 import About from '~/views/about';
-import RootIndex from '~/views/root/root-index';
+import ErrorPage from '~/views/error-page';
 
 const router = createBrowserRouter([
   {

@@ -33,25 +33,43 @@ export default function SideBar(): JSX.Element {
 // Major section nav: space, about
 // sub section nav: spaces
 
+type StyleNavArgs = {isActive: boolean};
+
 function Navigation(): JSX.Element {
+  function styleNavLink({isActive}: StyleNavArgs): string | undefined {
+    return isActive ? 'text-blue-50' : undefined;
+  }
+
   return (
     <nav>
       <ul>
-        <NavLink to="/">Spaces</NavLink>
-        <SpacesNav />
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/" className={styleNavLink}>
+          Spaces
+        </NavLink>
+        <SpacesNav styleNavLink={styleNavLink} />
+        <NavLink to="/about" className={styleNavLink}>
+          About
+        </NavLink>
       </ul>
     </nav>
   );
 }
 
-function SpacesNav(): JSX.Element {
+type SpaceNavProps = {
+  styleNavLink?: ({isActive}: StyleNavArgs) => string | undefined;
+};
+
+function SpacesNav(props: SpaceNavProps): JSX.Element {
+  const {styleNavLink} = props;
+
   return (
     <ul>
       {tempSpaces.length ? (
         tempSpaces.map((space) => (
           <li key={space.id}>
-            <NavLink to={`/space/${space.name}`}>{space.name}</NavLink>
+            <NavLink to={`/space/${space.name}`} className={styleNavLink}>
+              {space.name}
+            </NavLink>
           </li>
         ))
       ) : (
