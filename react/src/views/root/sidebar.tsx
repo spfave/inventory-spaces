@@ -37,8 +37,8 @@ function styleNavLink({isActive}: StyleNavArgs): string | undefined {
 function Navigation(): JSX.Element {
   return (
     <nav className="m-3">
-      <ul className="flex flex-col gap-3 [&>li]:flex [&>li]:h-8 [&>li]:items-center [&>li]:gap-3">
-        <li className="">
+      <ul className="flex flex-col gap-3 [&>li]:flex [&>li]:h-8 [&>li]:items-center [&>li]:gap-3 hover:[&>li]:text-blue-100">
+        <li>
           <span className="flex w-[40px] justify-center">
             <img
               src="./assets/icons/reshot-logistics-box.svg"
