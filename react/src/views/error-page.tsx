@@ -5,7 +5,7 @@ type RouteError = {
   message?: string;
 };
 
-export default function ErrorPage(): JSX.Element {
+export default function ErrorPage() {
   const navigate = useNavigate();
   const error = useRouteError() as RouteError;
   console.warn(error);

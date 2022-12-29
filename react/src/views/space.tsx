@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 
-export default function Space(): JSX.Element {
+export default function Space() {
   const {space} = useParams();
 
   return (

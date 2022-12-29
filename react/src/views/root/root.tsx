@@ -2,7 +2,7 @@ import {Outlet} from 'react-router-dom';
 
 import SideBar from './sidebar';
 
-export default function Root(): JSX.Element {
+export default function Root() {
   return (
     <>
       <Main />
@@ -12,7 +12,7 @@ export default function Root(): JSX.Element {
   );
 }
 
-function Main(): JSX.Element {
+function Main() {
   return (
     <main className="flex flex-grow">
       <SideBar />
@@ -21,7 +21,7 @@ function Main(): JSX.Element {
   );
 }
 
-function Footer(): JSX.Element {
+function Footer() {
   return (
     <footer className="flex items-center justify-center gap-5 py-2">
       <p className="text-center">Built by Sebastian</p>

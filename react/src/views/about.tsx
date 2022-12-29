@@ -1,4 +1,4 @@
-export default function About(): JSX.Element {
+export default function About() {
   return (
     <div className="flex-grow">
       <header className="flex h-16 place-items-end gap-3 px-3 pb-3">

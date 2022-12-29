@@ -12,7 +12,7 @@ const tempSpaces: Space[] = [
   {id: '789', name: 'Bedroom Closet', itemCount: 7},
 ];
 
-export default function SideBar(): JSX.Element {
+export default function SideBar() {
   return (
     <div className="flex w-80 flex-col">
       <header className="flex h-16 place-items-end gap-3 px-3 pb-3">
@@ -34,7 +34,7 @@ function styleNavLink({isActive}: StyleNavArgs): string | undefined {
   return isActive ? 'text-blue-50' : undefined;
 }
 
-function Navigation(): JSX.Element {
+function Navigation() {
   return (
     <nav className="m-3">
       <ul className="flex flex-col gap-3 [&>li]:flex [&>li]:h-8 [&>li]:items-center [&>li]:gap-3 hover:[&>li]:text-blue-100">
@@ -74,7 +74,7 @@ type SpacesNavProps = {
   styleNavLink?: (args: StyleNavArgs) => string | undefined;
 };
 
-function SpacesNav(props: SpacesNavProps): JSX.Element {
+function SpacesNav(props: SpacesNavProps) {
   const {styleNavLink} = props;
 
   return (

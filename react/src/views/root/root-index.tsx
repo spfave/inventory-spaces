@@ -1,4 +1,4 @@
-export default function RootIndex(): JSX.Element {
+export default function RootIndex() {
   return (
     <div className="flex-grow">
       <div className="h-16 "></div>
